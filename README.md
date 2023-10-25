@@ -21,3 +21,6 @@ Then it uses OpenAI API to give scraped news to chatGPT to summarize the news in
 
 ## Steps
 
+## notes
+New York Times offers API so maybe I can use New York Times...
+
