@@ -1,18 +1,22 @@
-import requests
-from bs4 import BeautifulSoup
+import textSoup as textSoup
 
-url = 'https://www.theverge.com/2023/10/24/23930669/humane-ai-pin-trust-light-camera'
+def get_raw_source():
+    soup = textSoup.get_soup()
+    return soup
 
-response = requests.get(url)
+def get_text_file():
+    text = textSoup.get_text()
+    return text
 
-# if it is a successful request
-if response.status_code == 200:
-    # raw content is not compatible with python
-    # so process it and organize it into a structured data format
-    soup = BeautifulSoup(response.content, 'html.parser')
-    # get text from html
-    text = soup.get_text()
-    print(text)
+def get_html_file():
+    html_file = textSoup.get_html()
+    return html_file
 
-else : 
-    print("unsuccessful request")
+
+if __name__ == "__main__" :
+    soup = get_raw_source()
+    text = get_text_file()
+    html_file = get_html_file()
+    
+else:
+    print(" imported")
