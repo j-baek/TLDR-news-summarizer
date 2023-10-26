@@ -1,14 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = 'https://kin.naver.com/search/list.nhn?query=%ED%8C%8C%EC%9D%B4%EC%8D%AC'
+url = 'https://www.theverge.com/2023/10/24/23930669/humane-ai-pin-trust-light-camera'
 
 response = requests.get(url)
 
+# if it is a successful request
 if response.status_code == 200:
-    html = response.text
-    soup = BeautifulSoup(html, 'html.parser')
-    print(soup)
+    # raw content is not compatible with python
+    # so process it and organize it into a structured data format
+    soup = BeautifulSoup(response.content, 'html.parser')
+    # get text from html
+    text = soup.get_text()
+    print(text)
 
 else : 
-    print(response.status_code)
+    print("unsuccessful request")
