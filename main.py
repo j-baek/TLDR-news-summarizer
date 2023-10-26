@@ -17,6 +17,7 @@ if __name__ == "__main__" :
     soup = get_raw_source()
     text = get_text_file()
     html_file = get_html_file()
+    print(text)
     
 else:
     print(" imported")
