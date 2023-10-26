@@ -23,4 +23,6 @@ Then it uses OpenAI API to give scraped news to chatGPT to summarize the news in
 
 ## notes
 New York Times offers API so maybe I can use New York Times...
-
+***
+### Architecture Diagram
+![Backend](https://github.com/j-baek/TLDR-news-summarizer/assets/84064951/062dc7ba-ec2f-4376-a65f-fa1e33682a8a)
