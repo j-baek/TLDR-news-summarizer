@@ -1,4 +1,5 @@
 # TLDR-news-summarizer
+***
 for people who are too lazy to read entire news but want to get some information
 <br />
 <br />
@@ -24,7 +25,15 @@ Then it uses OpenAI API to give scraped news to chatGPT to summarize the news in
 - Use Beautiful Soup to extract source code from a webpage
 - extract title and article body (use json functions to extract article body)
 - use OPEN AI API to send the extracted data and ask it to summarize the data
+- build webpage
+- use Flask or Django to connect python to html file so that summarized news data can be shown on web page
+- display whole news or link website if a user wants to see the whole news
+
+### more features
+- get today's head lines on CNN and display them on webpage 
+- if a user click it, show its summary and link to the news website
+
 ## notes
 
-***
+
 ### Architecture Diagram
