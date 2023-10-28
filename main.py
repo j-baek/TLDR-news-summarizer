@@ -1,7 +1,9 @@
 import textSoup as textSoup
 
-def get_raw_source():
-    soup = textSoup.get_soup()
+url = 'https://edition.cnn.com/2023/10/27/asia/south-korea-teachers-strike-analysis-intl-hnk/index.html'
+
+def get_raw_source(url):
+    soup = textSoup.get_soup(url)
     return soup
 
 def get_text_file():
@@ -17,12 +19,14 @@ def get_html_modified():
     return title
 
 if __name__ == "__main__" :
-    soup = get_raw_source()
+    url = 'https://edition.cnn.com/2023/10/27/asia/south-korea-teachers-strike-analysis-intl-hnk/index.html'
+
+    soup = get_raw_source(url)
     text = get_text_file()
     html_file = get_html_file()
     title = get_html_modified()
 
-    tilte_w_text = title + text
+    tilte_w_text = title + "\n" + text
     print(tilte_w_text)
     
 else:
