@@ -20,8 +20,11 @@ Then it uses OpenAI API to give scraped news to chatGPT to summarize the news in
 <br />
 
 ## Steps
-
+### Basics
+- Use Beautiful Soup to extract source code from a webpage
+- extract title and article body (use json functions to extract article body)
+- use OPEN AI API to send the extracted data and ask it to summarize the data
 ## notes
-New York Times offers API so maybe I can use New York Times...
+
 ***
 ### Architecture Diagram
