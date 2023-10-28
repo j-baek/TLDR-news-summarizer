@@ -1,33 +1,13 @@
 import textSoup as textSoup
 
-url = 'https://edition.cnn.com/2023/10/27/asia/south-korea-teachers-strike-analysis-intl-hnk/index.html'
-
-def get_raw_source(url):
-    soup = textSoup.get_soup(url)
-    return soup
-
-def get_text_file():
-    text = textSoup.get_text()
-    return text
-
-def get_html_file():
-    html_file = textSoup.get_html()
-    return html_file
-
-def get_html_modified():
-    title = textSoup.get_html_modified()
-    return title
-
 if __name__ == "__main__" :
+    # CNN News: Why teachers in South Korea are scared of their pupils – and their parents
+    # for this website, title is within <title> </title> tag
     url = 'https://edition.cnn.com/2023/10/27/asia/south-korea-teachers-strike-analysis-intl-hnk/index.html'
+    data = textSoup.get_data(url)
+    article = data["title"] + "\n\n" + data["article_body"]
+    print(article)
 
-    soup = get_raw_source(url)
-    text = get_text_file()
-    html_file = get_html_file()
-    title = get_html_modified()
-
-    tilte_w_text = title + "\n" + text
-    print(tilte_w_text)
     
 else:
     print(" imported")
