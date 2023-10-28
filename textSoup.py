@@ -1,7 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
+import json
 
-url = 'https://www.theverge.com/2023/10/24/23930669/humane-ai-pin-trust-light-camera'
+# CNN News: Why teachers in South Korea are scared of their pupils – and their parents
+# for this website, title is within <title> </title> tag
+# 
+url = 'https://edition.cnn.com/2023/10/27/asia/south-korea-teachers-strike-analysis-intl-hnk/index.html'
 response = requests.get(url, timeout=10)
 
 def get_soup() :
@@ -14,14 +18,27 @@ def get_soup() :
     else :
         print("ERROR: not successful request")
 
-
 def get_text():
     soup = get_soup()
-    text = soup.get_text()
-    return text
+    script_tag = soup.find('script', type='application/ld+json')
+
+    if script_tag:
+        script_content = script_tag.string
+        try: 
+            json_data = json.loads(script_content)
+            article_body = json_data.get('articleBody', '')
+            return article_body
+        except json.JSONDecodeError:
+            return "JSON parsing error"
+    return "not successful to extract article body"
 
 def get_html():
     soup = get_soup()
     for script in soup(["script", "style"]) :
         script.extract()
     return soup
+
+def get_html_modified():
+    soup = get_soup()
+    title = soup.title
+    return str(title)
