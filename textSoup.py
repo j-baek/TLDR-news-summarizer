@@ -30,6 +30,7 @@ def get_data(url):
             soup = BeautifulSoup(response.content, 'html.parser')
 
             data = {}
+            data["url"] = url
             data["title"] = soup.title.text
 
             script_tag = soup.find('script', type='application/ld+json')
@@ -57,13 +58,12 @@ def get_data(url):
                 data["html"] = data.get("html","") + str(script)
             '''
 
-            json_object = json.dumps(data) # convert python dictionary to json object
-
-            # add jsonObject to news_data.json file
-            existing_data.append(json_object)
+            # since python dictionary and json object look identical, append it to json object right away
+            existing_data.append(data)
             with open('news_data.json', 'w') as file:
                 json.dump(existing_data, file, indent=4)
-            return json_object
+                
+            return data
         else :
             print("ERROR: not successful request!!!!")
             print(response.status_code)
