@@ -1,4 +1,4 @@
-import textSoup as textSoup
+import textSoup as news_data
 from flask import Flask, render_template
 import json
 
@@ -12,22 +12,23 @@ def index():
 
 
 if __name__ == "__main__" :
-    # CNN News: Why teachers in South Korea are scared of their pupils – and their parents
-    # for this website, title is within <title> </title> tag
-    #url = 'https://edition.cnn.com/2023/10/27/asia/south-korea-teachers-strike-analysis-intl-hnk/index.html'
-    url = 'https://edition.cnn.com/2023/10/27/world/abandoned-golf-courses-reclaimed-by-nature-c2e-spc-scn-intl/index.html'
-    news_json = textSoup.get_data(url)
-    #news_data = json.load(news_json) # parse json object to python dictionary
+    try:
+        with open('news_url.json', 'r') as file:
+            url_data = json.load(file)
+    except FileNotFoundError:
+        print("json file not found!!!")
 
-    print(news_json)
-    '''
-    print("\n")
-    print("Title : " + news_data["title"] + "\n")
-    print(news_data["summary"])
-    print("\n\n")
+    file.close()
 
-    #print(summary)
-    '''
+    for item in url_data:
+        for i in range(10) :
+            if item.get('id') == str(i + 1):
+                news_json = news_data.get_data(item["url"])
+                print("\n " + str(i + 1) + "\n ")
+                print("Title : " + news_json["title"] + "\n")
+                print(news_json["summary"])
+                print("\n\n")
+
 
 else:
     print(" imported")
