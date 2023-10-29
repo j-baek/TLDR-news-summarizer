@@ -10,4 +10,5 @@ def summarize_data(article):
             {"role": "user", "content": article}
         ]
     )
-    return completion.choices[0].message
+    #completion.choices[0].message
+    return completion.choices[0].message["content"]
