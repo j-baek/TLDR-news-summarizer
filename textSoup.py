@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-import test as getSummary
+import gpt_api as getSummary
 
 def get_data(url):
 
@@ -12,6 +12,8 @@ def get_data(url):
     except FileNotFoundError:
         print("data file not FOUND!")
 
+    # close file
+    file.close()
     # check if the JSON object with specific url already exists
     jO_existing = False
     for item in existing_data:
@@ -62,7 +64,7 @@ def get_data(url):
             existing_data.append(data)
             with open('news_data.json', 'w') as file:
                 json.dump(existing_data, file, indent=4)
-                
+                file.close()
             return data
         else :
             print("ERROR: not successful request!!!!")
