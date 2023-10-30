@@ -32,6 +32,7 @@ def get_data(url):
             soup = BeautifulSoup(response.content, 'html.parser')
 
             data = {}
+            data["id"] = str(len(existing_data) + 1)
             data["url"] = url
             data["title"] = soup.title.text
 
