@@ -1,52 +1,74 @@
 [
     {
+        "id": "1",
         "url": "https://edition.cnn.com/2023/10/27/asia/south-korea-teachers-strike-analysis-intl-hnk/index.html",
         "title": "Why teachers in South Korea are scared of their pupils, and their parents | CNN",
         "summary": "Tens of thousands of teachers in South Korea have been protesting for more protection from students and parents, following the suicide of a first-grade teacher who was found dead in her classroom. The teachers point to a 2014 child abuse law, which they say makes them fearful of disciplining students for fear of being sued by parents. The government has passed legal revisions to protect teachers from being sued for child abuse and to shift the responsibility for handling complaints and lawsuits from teachers to principals."
     },
     {
+        "id": "2",
         "url": "https://edition.cnn.com/2023/10/27/world/abandoned-golf-courses-reclaimed-by-nature-c2e-spc-scn-intl/index.html",
         "title": "Abandoned golf courses are being reclaimed by nature | CNN",
         "summary": "Golf courses, often considered as wasteful and harmful to the environment due to land clearing, heavy water usage, and the spread of pesticides and fertilizers, are being repurposed into natural landscapes to promote biodiversity and combat climate change. Conservation organizations like The Trust for Public Land (TPL) are acquiring abandoned golf courses and restoring them into habitats that benefit endangered species and provide public access. Examples include San Geronimo and Ocean Meadows in California, Rancho Ca\u00f1ada in Monterey, and Valley View Golf Course in Ohio. Similar initiatives are also taking place in the UK and Australia."
     },
     {
+        "id": "3",
         "url": "https://edition.cnn.com/2023/10/27/tech/elon-musk-twitter-x-one-year-changes/index.html",
         "title": "Elon Musk\u2019s Twitter takeover, the platform and its cultural impact have fundamentally changed | CNN Business",
         "summary": "Elon Musk's acquisition of Twitter one year ago has led to a series of changes that transformed the platform into a widely ridiculed, debt-ridden platform struggling to regain prominence and respectability. Musk's leadership saw a significant reduction in workforce, policy and product overhauls that altered content moderation, a decline in ad revenue, and his erratic behavior and influence overshadowing the platform. While Musk's vision for Twitter's future as an \"everything app\" is pushed forward by new CEO Linda Yaccarino, the platform's path to recovery remains uncertain amid legal challenges and regulatory investigations."
     },
     {
+        "id": "4",
         "url": "https://edition.cnn.com/2023-10-26-amazon-q3-earnings/index.html",
         "title": "Amazon Q3 earnings: Revenue jumps 13%, continuing rebound | CNN Business",
         "summary": "Amazon reported strong financial results for the third quarter of 2023, with revenue reaching $143.1 billion, a 13% increase compared to the same period last year. The company also exceeded expectations in terms of profits, reporting $9.9 billion for the quarter. Key drivers of growth included Amazon Web Services, which saw sales jump 12%, and advertising revenue, which increased by 26%."
     },
     {
+        "id": "5",
         "url": "https://edition.cnn.com/apple-tv-plus-price-increase/index.html",
         "title": "Apple TV+ increases pricing once again | CNN Business",
         "summary": "Apple has announced an increase in the monthly price of its TV+ streaming platform, with subscriptions now costing $9.99, up from $6.99. The change applies to new customers immediately and will take effect for existing subscribers on their next renewal date. Apple has stated that the price hike reflects its focus on adding high-quality content and features to the service, which is home to popular shows such as \"Ted Lasso\" and \"The Morning Show.\""
     },
     {
+        "id": "5",
         "url": "https://edition.cnn.com/2023/10/25/tech/digit-robot/index.html",
         "title": "This company envisions a future where humanoid robots are as ubiquitous as smartphones | CNN Business",
         "summary": "Agility Robotics, a Silicon Valley firm, has unveiled its humanoid robot called \"Digit\" which can autonomously complete tasks such as loading and unloading bins. While the current model showcased its ability to operate and problem-solve in real time, the technology is still in the testing phase and has some limitations. Agility Robotics estimates that it could be several years before robots like Digit can seamlessly work alongside humans, and companies like Amazon are already testing its use in warehouses."
     },
     {
+        "id": "6",
         "url": "https://edition.cnn.com/2023/10/18/tech/apple-pencil-usb-c/index.html",
         "title": "Apple continues its sweep to roll out USB-C to more devices | CNN Business",
         "summary": "Apple has quietly announced the release of its third-generation Pencil, which now includes USB-C charging and is compatible with iPads. This move comes as Apple faces pressure from EU regulators to adopt universal charging. The new Apple Pencil is priced at $79, $20 cheaper than the previous generation, and $50 cheaper than the original."
     },
     {
+        "id": "7",
         "url": "https://edition.cnn.com/2023/10/16/tech/new-york-city-ai-action-plan/index.html",
         "title": "New York City unveils | CNN Business",
         "summary": "The Mayor of New York City has unveiled a citywide AI \"action plan\" aimed at evaluating AI tools, boosting AI skills among city employees, and responsibly implementing AI technologies to improve quality of life for New Yorkers. The plan includes the establishment of an AI Steering Committee and the completion of nearly 40 actions within the next year. The city is also piloting an AI-powered chatbot to assist business owners, which uses Microsoft's Azure AI services."
     },
     {
+        "id": "8",
         "url": "https://edition.cnn.com/2023/04/12/business/electric-car-regulations-response/index.html",
         "title": "US government's proposal to boost EV sales is challenging but not impossible | CNN Business",
         "summary": "The US government is considering new regulations that would require automakers to sell a majority of electric vehicles (EVs) by 2032, with the goal of reaching two-thirds of all new cars sold being electric. The proposal is still subject to change and would require significant investment in charging infrastructure and improved battery technology. While reaching this target is not guaranteed, experts believe that as EV technology improves, prices drop, and more models become available, consumer demand for EVs will increase, making it more likely to achieve the two-thirds market share goal in the coming years."
     },
     {
+        "id": "9",
         "url": "https://edition.cnn.com/2023/10/28/business/cities-curbs-parking-deliveries-bikers/index.html",
         "title": "Cities try to take back curbs from cars and delivery trucks | CNN Business",
         "summary": "Cities in the US are facing a battle over curb space, as numerous users and uses compete for limited real estate. The issue is exacerbated by the prioritization of free parking, which has led to congestion, pollution, and accidents. To address this, some cities are considering removing or charging for parking spaces based on demand, while others are implementing smart loading zones and alternative delivery methods to alleviate congestion and better utilize curb space."
+    },
+    {
+        "id": "11",
+        "url": "https://edition.cnn.com/2023/09/21/travel/seaweed-recipes-c2e-spc-intl/index.html",
+        "title": "Seaweed recipes: from traditional Asian to new Western dishes | CNN",
+        "summary": "Seaweed, a superfood abundant in Asia, is increasingly being incorporated into Western cuisine for both its sustainable and nutritional benefits. Chefs are experimenting with seaweed by creating spreads like seaweed jam, making soups such as miyeok-guk, and adding it to smoothies for a vitamin boost. The seaweed trend goes beyond typical uses; it can also be used to make cheese and butter, enhancing the flavor and offering unique culinary experiences."
+    },
+    {
+        "id": "12",
+        "url": "https://edition.cnn.com/travel/fukuoka-japan-street-food-yatai-intl-hnk/index.html",
+        "title": "Fukuoka: The Japanese city that dominates street food | CNN",
+        "summary": "Fukuoka, Japan's sixth largest city, is known for its open-air food stalls called yatais. These stalls are assigned specific spots on major pedestrian thoroughfares and operate only at night. Fukuoka's mayor implemented regulations to ensure the safety and quality of the yatais while preserving their charm, leading to a new generation of operators offering innovative food and unique designs. The yatais are a popular attraction for both locals and tourists, adding excitement and surprise to Fukuoka's street food scene."
     }
 ]
