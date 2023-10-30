@@ -12,16 +12,17 @@ def index():
 
 
 if __name__ == "__main__" :
+    # open json file to get the data that has news urls
     try:
         with open('news_url.json', 'r') as file:
             url_data = json.load(file)
-            
+            file.close()
     except FileNotFoundError:
         print("json file not found!!!")
 
-    file.close()
     num_id_len = len(url_data)
     
+    # display all news options with id and title
     for i in range(num_id_len) :
         if url_data[i].get("id") == str(i + 1):
             news_json = data_function.get_data(url_data[i]["url"])
@@ -32,6 +33,7 @@ if __name__ == "__main__" :
     print("\n")
 
     NEWS_FOUND = False
+    # get the news that user chooses and display the tile and summary
     for i in range(num_id_len) :
         if url_data[i].get("id") == userPick:
             news_json = data_function.get_data(url_data[i]["url"])
@@ -39,9 +41,10 @@ if __name__ == "__main__" :
             print("\n" + news_json["summary"]+ "\n")
             NEWS_FOUND = True
             break;
-
+    # for invalid input, print out message 
     if NEWS_FOUND is False :
         print("Invalid input. \n")
 
+# if __name__ is not "__main__", that means this main.py file is imported
 else:
     print(" imported")
