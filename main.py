@@ -2,15 +2,6 @@ import textSoup as data_function
 from flask import Flask, render_template
 import json
 
-'''
-app = Flask(__name__)
-@app.route('/')
-def index():
-    text = "string generated in Python"
-    return render_template('page.html', text=text)
-'''
-
-
 if __name__ == "__main__" :
     # open json file to get the data that has news urls
     try:
