@@ -2,6 +2,7 @@ import textSoup as news_function
 from flask import Flask, render_template
 import json
 import headline as headline_function
+import os
 
 if __name__ == "__main__" :
 
@@ -9,12 +10,15 @@ if __name__ == "__main__" :
     headline_function.check_last_headline_update(headline_url)
 
     # open json file to get the data that has news urls
-    try:
-        with open('news_url.json', 'r') as file:
-            url_data = json.load(file)
-            file.close()
-    except FileNotFoundError:
-        print("json file not found!!!")
+    if os.path.exists('news_url.json'):
+        try:
+            with open('news_url.json', 'r') as file:
+                url_data = json.load(file)
+                file.close()
+        except FileNotFoundError as error:
+            print(f"An error occurred while working with the file!!!: {str(error)}")
+    else:
+        print("news_url.json file not FOUND!!!")
 
     num_id_len = len(url_data)
     
