@@ -24,8 +24,8 @@ if __name__ == "__main__" :
     
     # display all news options with id and title
     # (i = num_id_len; i > -1; i--)
+    '''
     for i in range(num_id_len -1, -1, -1) :
-        print(f"is is = {i}")
         if url_data[i].get("id") == str(i + 1):
             news_json = news_function.get_data(url_data[i]["url"])
             print("\n " + str(i + 1))
@@ -33,6 +33,7 @@ if __name__ == "__main__" :
     
     userPick = input("Pick a news to see the summary. Please enter a number: ")
     print("\n")
+    
 
     NEWS_FOUND = False
     # get the news that user chooses and display the tile and summary
@@ -46,6 +47,7 @@ if __name__ == "__main__" :
     # for invalid input, print out message 
     if NEWS_FOUND is False :
         print("Invalid input. \n")
+    '''
 
 # if __name__ is not "__main__", that means this main.py file is imported
 else:

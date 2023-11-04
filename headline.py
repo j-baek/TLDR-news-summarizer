@@ -4,14 +4,11 @@ import textSoup as news_function
 from datetime import datetime
 import os
 
-url = "https://edition.cnn.com/business/tech"
-
 # put headline page url as input and it adds json objects to headline_url.json file
 def get_headline_url(url):
     response = requests.get(url, timeout=10)
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')
-
         headline_urls = soup.find_all('a', {"class": "container__link container__link--type-article container_lead-plus-headlines-with-images__link"}, {"data-link-type": "article"})
         prev_url = "https://edition.cnn.com" 
         for headline_url in headline_urls:
@@ -22,6 +19,9 @@ def get_headline_url(url):
                 data = news_function.get_data(h_url)
                 
             prev_url = h_url
+    else: 
+        print("ERROR: not successful request!!!!")
+        print(response.status_code)
 
 
 # check if today's headline has been updated. If not, update it
@@ -47,6 +47,7 @@ def check_last_headline_update(url):
 
     # if the headline has not been updated, update it 
     if today != last_date_called:
+        print("New data processing")
         get_headline_url(url)
     else:
         print("Today's headline already acquired\n\n\n")
