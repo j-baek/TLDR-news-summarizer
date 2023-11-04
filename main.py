@@ -6,7 +6,7 @@ import os
 
 if __name__ == "__main__" :
 
-    headline_url = "https://edition.cnn.com/business/tech"
+    headline_url = "https://edition.cnn.com/business/media"
     headline_function.check_last_headline_update(headline_url)
 
     # open json file to get the data that has news urls
@@ -24,7 +24,6 @@ if __name__ == "__main__" :
     
     # display all news options with id and title
     # (i = num_id_len; i > -1; i--)
-    '''
     for i in range(num_id_len -1, -1, -1) :
         if url_data[i].get("id") == str(i + 1):
             news_json = news_function.get_data(url_data[i]["url"])
@@ -47,7 +46,6 @@ if __name__ == "__main__" :
     # for invalid input, print out message 
     if NEWS_FOUND is False :
         print("Invalid input. \n")
-    '''
 
 # if __name__ is not "__main__", that means this main.py file is imported
 else:
