@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import json
 import gpt_api as getSummary
 
+# this funciton returns data from the url. If the data has already been processed, then return that data
+# from json file directly. If not, create json objects and store them on news_url.json and nes_data.json file then return the data
 def get_data(url):
 
     # check if data file already exists
@@ -14,6 +16,7 @@ def get_data(url):
 
     # close file
     file.close()
+
     # check if the JSON object with specific url already exists
     jo_existing = False
     for item in existing_data:
@@ -21,8 +24,7 @@ def get_data(url):
             jo_existing = True
             return item
 
-
-    # if jason object doesn't exist, add a new json object
+    # if JSON object doesn't exist, add a new json object
     if jo_existing == False:
         # if JSON object doesn't exist in news_data.jon file
         response = requests.get(url, timeout=10)
@@ -86,3 +88,19 @@ def get_data(url):
         else :
             print("ERROR: not successful request!!!!")
             print(response.status_code)
+
+# put headline page url as input and it adds json objects to headline_url.json file
+def get_headlines_from_main_page(url):
+    response = requests.get(url, timeout=10)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+        headline_urls = soup.find_all('a', {"class": "container__link container__link--type-article container_lead-plus-headlines-with-images__link"}, {"data-link-type": "article"})
+        prev_url = "https://edition.cnn.com" 
+        for headline_url in headline_urls:
+            # the url doesn't included https://edition.cnn.com so add them manually
+            h_url = "https://edition.cnn.com" + headline_url.get('href')
+            # there are some duplications so exclude them
+            if prev_url != h_url:
+                get_data(h_url)
+            prev_url = h_url

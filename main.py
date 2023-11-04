@@ -1,8 +1,13 @@
-import textSoup as data_function
+import textSoup as news_function
 from flask import Flask, render_template
 import json
+import headline as headline_function
 
 if __name__ == "__main__" :
+
+    headline_url = "https://edition.cnn.com/business/tech"
+    headline_function.check_last_headline_update(headline_url)
+
     # open json file to get the data that has news urls
     try:
         with open('news_url.json', 'r') as file:
@@ -16,7 +21,7 @@ if __name__ == "__main__" :
     # display all news options with id and title
     for i in range(num_id_len) :
         if url_data[i].get("id") == str(i + 1):
-            news_json = data_function.get_data(url_data[i]["url"])
+            news_json = news_function.get_data(url_data[i]["url"])
             print("\n " + str(i + 1))
             print("Title : " + news_json["title"] + "\n")
     
@@ -27,7 +32,7 @@ if __name__ == "__main__" :
     # get the news that user chooses and display the tile and summary
     for i in range(num_id_len) :
         if url_data[i].get("id") == userPick:
-            news_json = data_function.get_data(url_data[i]["url"])
+            news_json = news_function.get_data(url_data[i]["url"])
             print("Title: " + news_json["title"] + "\n")
             print("\n" + news_json["summary"]+ "\n")
             NEWS_FOUND = True

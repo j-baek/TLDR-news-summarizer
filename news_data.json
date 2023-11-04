@@ -88,5 +88,53 @@
         "url": "https://edition.cnn.com/2022/12/16/entertainment/james-cameron-avatar-sequels/index.html",
         "title": "'Avatar: The Way of Water': James Cameron might just be the king of the sequel | CNN",
         "summary": "James Cameron is known for his successful sequels, and with the release of \"Avatar: The Way of Water,\" he solidifies himself as the king of sequels. Rather than simply replicating the original film, Cameron cleverly expands upon the existing template, introducing new elements and unexpected twists. In each of his sequels, Cameron pushes the boundaries of filmmaking, particularly in terms of visual effects. \"Avatar: The Way of Water\" continues this trend, introducing new characters and exploring the dynamics of family, while still delivering on the aspects that audiences loved about the first film."
+    },
+    {
+        "id": "16",
+        "url": "https://edition.cnn.com/2023/11/03/tech/uk-closes-amazon-meta-antitrust-investigations/index.html",
+        "title": "UK officials close antitrust probes into Amazon\u2019s and Meta\u2019s retail platforms | CNN Business",
+        "summary": "The UK's Competition and Markets Authority (CMA) has concluded its antitrust investigations into Amazon and Meta's retail platforms, stating that it has secured commitments from both companies to protect fair competition. Amazon has pledged to provide independent sellers with a fair chance of being featured in its \"Buy Box\" and allow them to negotiate delivery costs for its Prime service with independent couriers. Meta, on the other hand, has promised not to exploit the data of users that advertise on its retail platform and to allow competitors to opt out of Meta using their data to improve Facebook Marketplace."
+    },
+    {
+        "id": "17",
+        "url": "https://edition.cnn.com/2023/11/01/tech/apple-ai-upgrades/index.html",
+        "title": "Apple hints at an AI-focused future and \u2018scary fast\u2019 upgrades | CNN Business",
+        "summary": "During an Apple product launch event, CEO Tim Cook introduced the company's new M3 chips, which promise faster computing, improved graphics, longer battery life, and enhanced support for artificial intelligence (AI). The chips will be featured in Apple's latest MacBook Pro and iMac lineup. While Apple has been less vocal about its AI plans compared to other tech giants, analysts believe that the introduction of the M3 chip signifies Apple's commitment to a future infused with AI integration.\n"
+    },
+    {
+        "id": "18",
+        "url": "https://edition.cnn.com/2023/11/02/tech/elon-musk-conversation-british-prime-minister-rishi-sunak-artificial-intelligence/index.html",
+        "title": "Elon Musk tells UK PM Rishi Sunak AI could mean \u2018no job is needed\u2019 | CNN Business",
+        "summary": "Elon Musk participated in a conversation with British Prime Minister Rishi Sunak at the UK's inaugural AI Safety Summit, where they discussed the potential dangers and opportunities of artificial intelligence (AI). Musk emphasized that while AI has the potential to be a force for good, there is still a non-zero chance of it going awry. The event also saw the signing of the Bletchley Declaration, in which more than 25 countries and the European Union agreed to collaborate on overseeing the responsible deployment of AI."
+    },
+    {
+        "id": "19",
+        "url": "https://edition.cnn.com/2023/11/02/tech/apple-earnings-september-quarter/index.html",
+        "title": "Apple earnings | CNN Business",
+        "summary": "Apple has reported its fourth consecutive quarter of year-over-year sales declines, with $89.5 billion in sales for the three months ended September 30, down 1% from the same period last year. Despite the sales dip, Apple's net income grew nearly 11% to $22.96 billion. The decline in sales was primarily driven by declines in Mac and iPad sales, while iPhone revenue ticked up by 3% to $43.8 billion."
+    },
+    {
+        "id": "20",
+        "url": "https://edition.cnn.com/2023/11/02/tech/jeff-bezos-amazon-ftc-lawsuit/index.html",
+        "title": "Amazon algorithm juiced prices, cost US consumers $1 billion new FTC lawsuit documents allege | CNN Business",
+        "summary": "The newly unsealed version of the lawsuit against Amazon reveals details about \"Project Nessie,\" an allegedly anticompetitive algorithmic pricing tool. The tool was used to raise prices on products and force Amazon's rivals to do the same, earning Amazon over $1 billion from US households. The lawsuit also alleges that Amazon founder Jeff Bezos personally directed a shift in the company's business to embrace irrelevant ads, which increased revenue at the expense of customers."
+    },
+    {
+        "id": "21",
+        "url": "https://edition.cnn.com/2023/11/02/tech/uber-lyft-settlements-new-york-attorney-general/index.html",
+        "title": "NY Attorney General announces $328 million in settlement funds from Uber and Lyft for \u2018taking earnings\u2019 | CNN Business",
+        "summary": "Uber and Lyft have agreed to pay a combined total of $328 million in settlements to thousands of rideshare drivers in New York. The settlements are the result of investigations by the New York Attorney General's office, which found that the companies had cheated drivers out of millions of dollars and benefits. As part of the agreements, the rideshare companies will pay back wages to drivers and implement improvements in working conditions, including a minimum earnings floor and guaranteed paid sick leave.\n"
+    },
+    {
+        "id": "22",
+        "url": "https://edition.cnn.com/2023/11/02/tech/microsoft-ai-news/index.html",
+        "title": "How Microsoft\u2019s AI is making a mess of the news | CNN Business",
+        "summary": "Microsoft's use of automation and artificial intelligence (AI) in curating its news homepage, MSN.com, has led to the amplification of false and bizarre stories, according to insiders. The company's decision to lay off human editors and rely more on AI has resulted in the promotion of questionable content, including conspiracy theories and fake news. Microsoft's use of AI in news curation has raised concerns about its responsible use and its impact on the journalism industry."
+    },
+    {
+        "id": "23",
+        "url": "https://edition.cnn.com/2023/11/02/tech/youtube-changing-teen-content-recommendations/index.html",
+        "title": "YouTube to stop repeatedly recommending certain types of content to teen users | CNN Business",
+        "summary": "YouTube is implementing new safeguards to protect teen users from potentially harmful content. The platform will limit repeated content recommendations on topics such as idealizing certain body weights, as well as social aggression. These changes are part of YouTube's wider youth safety efforts, which also include making \"take a break\" reminders and crisis resource information more prominent."
     }
 ]
