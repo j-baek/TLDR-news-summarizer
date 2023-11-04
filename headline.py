@@ -41,13 +41,13 @@ def get_headline_url(url):
                         except FileNotFoundError as error:
                             print(f"An error occurred while working with the file!!!: {str(error)}")
                         if EMPTY_FILE == True:
-                            with open('news_url.json', 'w') as file:
+                            with open('today_news.json', 'w') as file:
                                 json.dump(data, file, indent=4)
                                 EMPTY_FIle = False
                                 file.close()
                         else:
                             existing_data.append(data)
-                            with open('news_url.json', 'w') as file:
+                            with open('today_news.json', 'w') as file:
                                 json.dump(existing_data, file, indent=4)
                                 file.close()
                         
