@@ -23,7 +23,9 @@ if __name__ == "__main__" :
     num_id_len = len(url_data)
     
     # display all news options with id and title
-    for i in range(num_id_len) :
+    # (i = num_id_len; i > -1; i--)
+    for i in range(num_id_len -1, -1, -1) :
+        print(f"is is = {i}")
         if url_data[i].get("id") == str(i + 1):
             news_json = news_function.get_data(url_data[i]["url"])
             print("\n " + str(i + 1))

@@ -19,7 +19,8 @@ def get_headline_url(url):
             h_url = "https://edition.cnn.com" + headline_url.get('href')
             # there are some duplications so exclude them
             if prev_url != h_url:
-                news_function.get_data(h_url)
+                data = news_function.get_data(h_url)
+                
             prev_url = h_url
 
 
@@ -33,7 +34,7 @@ def check_last_headline_update(url):
                 # strptime function converts string to date object
                 last_date_called = datetime.strptime(file.read(), "%Y-%m-%d").date()
                 file.close()
-
+            # using "W", delete the previous data and write over it
             with open('last_url_update.txt', "w") as file:
                 # stftime converts date object to string 
                 file.write(today.strftime("%Y-%m-%d"))
