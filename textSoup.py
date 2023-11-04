@@ -104,6 +104,3 @@ def get_headlines_from_main_page(url):
             if prev_url != h_url:
                 get_data(h_url)
             prev_url = h_url
-
-url = "https://edition.cnn.com/business/tech"
-get_headlines_from_main_page(url)
