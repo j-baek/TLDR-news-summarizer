@@ -27,9 +27,9 @@ def get_headline_url(url):
 def check_last_headline_update(url): 
     # get today's date
     today = datetime.today().date()
-    if os.path.exists("last_url_update.txt"):
+    if os.path.exists('last_url_update.txt'):
         try:
-            with open("last_url_update.txt", "r") as file:
+            with open('last_url_update.txt', "r") as file:
                 # strptime function converts string to date object
                 last_date_called = datetime.strptime(file.read(), "%Y-%m-%d").date()
                 file.close()

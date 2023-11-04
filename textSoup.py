@@ -2,20 +2,22 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import gpt_api as getSummary
+import os
 
 # this funciton returns data from the url. If the data has already been processed, then return that data
 # from json file directly. If not, create json objects and store them on news_url.json and nes_data.json file then return the data
 def get_data(url):
 
     # check if data file already exists
-    try:
-        with open('news_data.json', 'r') as file:
-            existing_data = json.load(file)
-    except FileNotFoundError:
-        print("data file not FOUND!")
-
-    # close file
-    file.close()
+    if os.path.exists('news_data.json'):
+        try:
+            with open('news_data.json', 'r') as file:
+                existing_data = json.load(file)
+                file.close()
+        except FileNotFoundError as error:
+            print(f"An error occured while working with the file!!!: {str(error)}")
+    else:
+        print("news_data.json file not FOUND!!!")
 
     # check if the JSON object with specific url already exists
     jo_existing = False
@@ -66,25 +68,31 @@ def get_data(url):
             '''
             
             # open news_url json file and get url objects
-            try:
-                with open('news_url.json', 'r') as file:
-                    existing_url = json.load(file)
+            if os.path.exists('news_url.json') :
+                try:
+                    with open('news_url.json', 'r') as file:
+                        existing_url = json.load(file)
+                        file.close()
+                except FileNotFoundError as error:
+                    print(f"An error occurred while working with the file!!!: {str(error)}")
+                
+                # add new url object to json file
+                existing_url.append(url_data)
+                with open('news_url.json', 'w') as file:
+                    json.dump(existing_url, file, indent=4)
                     file.close()
-            except FileNotFoundError:
-                print("data file not FOUND!")
-            
-            # add new url object to json file
-            existing_url.append(url_data)
-            with open('news_url.json', 'w') as file:
-                json.dump(existing_url, file, indent=4)
-                file.close()
+            else:
+                print("news_url.json file not FOUND!!!")
 
             # since python dictionary and json object look identical, append it to json object right away
             existing_data.append(data)
-            with open('news_data.json', 'w') as file:
-                json.dump(existing_data, file, indent=4)
-                file.close()
-            return data
+            if os.path.exists('news_data.json'):
+                with open('news_data.json', 'w') as file:
+                    json.dump(existing_data, file, indent=4)
+                    file.close()
+                return data
+            else:
+                print("newS_data.json file not FOUND!!!")
         else :
             print("ERROR: not successful request!!!!")
             print(response.status_code)
