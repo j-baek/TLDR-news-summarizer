@@ -67,7 +67,7 @@ def get_data(url):
                 data["html"] = data.get("html","") + str(script)
             '''
             
-            # open news_url json file and get url objects
+            # open news_url json file and get url dictionary
             if os.path.exists('news_url.json') :
                 try:
                     with open('news_url.json', 'r') as file:
@@ -76,18 +76,21 @@ def get_data(url):
                 except FileNotFoundError as error:
                     print(f"An error occurred while working with the file!!!: {str(error)}")
                 
-                # add new url object to json file
+                # append url dictionary to existing json object 
+                # since python dictionary and json object look identical, it can be appended directly
                 existing_url.append(url_data)
+                # rewrite the whole object
                 with open('news_url.json', 'w') as file:
                     json.dump(existing_url, file, indent=4)
                     file.close()
             else:
                 print("news_url.json file not FOUND!!!")
 
-            # since python dictionary and json object look identical, append it to json object right away
+            # append news data dictionary to existing json object
             existing_data.append(data)
             if os.path.exists('news_data.json'):
                 with open('news_data.json', 'w') as file:
+                    # rewrite the whole object
                     json.dump(existing_data, file, indent=4)
                     file.close()
                 return data
