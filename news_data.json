@@ -177,12 +177,30 @@
         "id": "30",
         "url": "https://edition.cnn.com/2023/11/03/media/fox-mark-levin-holocaust-cnn/index.html",
         "title": "White House condemns Fox News for \u2018standing up on behalf of hate\u2019 after host attacks CNN anchors\u2019 Jewish heritage | CNN Business",
-        "summary": "The White House has condemned Fox News for promoting hate after one of its hosts launched an attack on the Jewish heritage of two CNN anchors. Mark Levin, a Fox News weekend host, falsely claimed that Wolf Blitzer's parents were not victims of the Holocaust and also called him a \"self-hating Jew.\" The White House also criticized Fox News for Islamophobic remarks made by prime time host Jesse Watters about Arab Americans and Muslims."
+        "summary": "The White House condemned Fox News for its hosts' hateful and false comments about the Jewish heritage of two CNN anchors and their coverage of the Israel-Hamas conflict. The network's host, Mark Levin, falsely claimed that Wolf Blitzer's parents weren't victims of the Holocaust, and called both Blitzer and Jake Tapper \"self-hating Jews\" and \"propagandists for the enemy.\" The White House reaffirmed its stance against Fox News, stating that such rhetoric has no place in America and referencing previous incidents where Fox hosts made offensive remarks."
     },
     {
         "id": "31",
-        "url": "https://edition.cnn.com/2023/11/02/media/fox-news-jesse-watters-reliable-sources/index.html",
-        "title": "White House calls on Fox News to apologize after top host\u2019s \u2018sickening\u2019 Islamophobic rant | CNN Business",
-        "summary": "Fox News is under fire for remaining silent after its host, Jesse Watters, made Islamophobic comments on \"The Five.\" Watters expressed his frustration with Arab Americans and the entire Muslim world, sparking outrage and a rebuke from the White House. This incident highlights Fox News' willingness to broadcast hateful rhetoric, contributing to a charged environment of bigotry and intolerance."
+        "url": "https://edition.cnn.com/2023/11/06/tech/grok-elon-musk-ai-chatbot-x-twitter/index.html",
+        "title": "\u2018Grok,\u2019 Elon Musk\u2019s AI chatbot with a \u2018rebellious\u2019 streak | CNN Business",
+        "summary": "Elon Musk has announced the introduction of \"Grok,\" an AI chatbot with a sarcastic sense of humor, developed by his startup xAI. Grok will be available to subscribers of X's Premium+ service and is intended to rival OpenAI's ChatGPT. Musk's handling of the platform since acquiring it last year has sparked criticism, particularly regarding content moderation, as seen in the reinstatement of British far-right figure Tommy Robinson's account."
+    },
+    {
+        "id": "32",
+        "url": "https://edition.cnn.com/2023/11/06/tech/epic-games-goes-to-court-to-challenge-googles-app-store-practices/index.html",
+        "title": "Epic Games goes to court to challenge Google\u2019s App store practices | CNN Business",
+        "summary": "Epic Games has launched a lawsuit against Google in federal court, alleging that Google's fees and terms for in-app subscriptions and transactions on the Google Play Store maintain an illegal monopoly. The lawsuit is part of a larger debate over whether app store operators like Google and Apple hinder competition in the app ecosystem. High-profile witnesses, including Google CEO Sundar Pichai and Epic CEO Tim Sweeney, may testify in the case, which originated from Epic's attempt to circumvent Apple and Google's app store rules in 2020."
+    },
+    {
+        "id": "33",
+        "url": "https://edition.cnn.com/2023/11/04/tech/google-lendlease-end-agreement/index.html",
+        "title": "Google, Lendlease axe plans for $15 billion development in Bay Area | CNN Business",
+        "summary": "Google has terminated its $15 billion development deal with Australian developer Lendlease to build homes, offices, and retail space in California's Silicon Valley. The decision was reached after a comprehensive review by Google of its real estate investments and current market conditions. While Google remains committed to delivering on its housing commitment, it will now work with multiple developers and capital partners to move forward with the Bay Area developments.\n\nThe termination of the project comes at a time of cost-cutting and layoffs for Google, and amid a struggling commercial real estate market. This setback raises uncertainty for Google's plans to address the affordability crisis in the Bay Area."
+    },
+    {
+        "id": "34",
+        "url": "https://edition.cnn.com/2023/11/05/tech/nvidia-amd-ceos-taiwan-intl-hnk/index.html",
+        "title": "Nvidia and AMD CEOs: The Taiwanese American cousins going head-to-head in the global AI race | CNN Business",
+        "summary": "Jensen Huang, CEO of Nvidia, and Lisa Su, CEO of AMD, are distant relatives, with Huang being Su's \"biao jiu,\" or first cousin once removed, through their shared family history in Taiwan. Both executives grew up in different parts of the world but followed similar paths in the semiconductor industry, ultimately becoming competitors. Their companies, Nvidia and AMD, are leading players in the AI chip industry, with products used in gaming, data centers, and other applications."
     }
 ]
