@@ -6,7 +6,7 @@ import os
 
 if __name__ == "__main__" :
 
-    headline_url = "https://edition.cnn.com/business/media"
+    headline_url = "https://edition.cnn.com/business/tech"
     headline_function.check_last_headline_update(headline_url)
 
     # open json file to get the data that has news urls
