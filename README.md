@@ -25,14 +25,15 @@ Then it uses OpenAI API to give scraped news to chatGPT to summarize the news in
 - [x] Use Beautiful Soup to extract source code from a webpage
 - [x] extract title and article body (use json functions to extract article body)
 - [x] use OPEN AI API to send the extracted data and ask it to summarize the data
-- [ ] from news headline pages, get all head lines and their urls
+- [X] from news headline pages, get all head lines and their urls
+- [X] as date changes, the news headlines get updated so update the data accordingly
+- [ ] show today's news headlines and show older news headlines as requested
 - [ ] build webpage
 - [ ] use Flask or Django to connect python to html file so that summarized news data can be shown on web page
 - [ ] display whole news or link website if a user wants to see the whole news
 
 ### more features
-- [ ] get today's head lines on CNN and display them on webpage 
-- [ ] if a user click it, show its summary and link to the news website
+- [ ] if a user clicks button, show its summary and link to the news website
 
 ## notes
 
