@@ -99,19 +99,3 @@ def get_data(url):
         else :
             print("ERROR: not successful request!!!!")
             print(response.status_code)
-
-# put headline page url as input and it adds json objects to headline_url.json file
-def get_headlines_from_main_page(url):
-    response = requests.get(url, timeout=10)
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'html.parser')
-
-        headline_urls = soup.find_all('a', {"class": "container__link container__link--type-article container_lead-plus-headlines-with-images__link"}, {"data-link-type": "article"})
-        prev_url = "https://edition.cnn.com" 
-        for headline_url in headline_urls:
-            # the url doesn't included https://edition.cnn.com so add them manually
-            h_url = "https://edition.cnn.com" + headline_url.get('href')
-            # there are some duplications so exclude them
-            if prev_url != h_url:
-                get_data(h_url)
-            prev_url = h_url
