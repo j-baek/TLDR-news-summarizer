@@ -49,8 +49,6 @@ def news_pick(mode):
             
             userPick = input("Pick a news to see the summary. Please enter a number: ")
             print("\n")
-            
-
             NEWS_FOUND = False
             # get the news that user chooses and display the tile and summary
             for i in range(num_id_len) :
