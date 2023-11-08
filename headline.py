@@ -35,37 +35,35 @@ def get_today_news(url):
                             print(f"An error occurred while working with the file!!!: {str(error)}")
                         TODAY_NEWS = True
                     # write today's news data 
-                    else:
-                        existing_data ="" # if this variable doesn't store data, don't write it in the json file
-                        
-                        if EMPTY_FILE == False: # if it is an empty file, json.load function will throw an exception error so check it
-                            try:
-                                with open('today_news.json', 'r') as file:
-                                    existing_data = json.load(file)
-                                    file.close()
-                            except FileNotFoundError as error:
-                                print(f"An error occurred while working with the file!!!: {str(error)}")
-                        else: # if writing the first news in the empty file
-                            try:
-                                with open('today_news.json', 'w') as file:
-                                    print("im empty file!")
-                                    jsonfile = [] # create a list and put python dictionary within the list. Otherwise, the dictionaries will not be within '[]'
-                                    jsonfile.append(data)
-                                    json.dump(jsonfile, file, indent=4)
-                                    
-                                    EMPTY_FILE = False
-                                    file.close()
-                            except FileNotFoundError as error:
-                                print(f"An error occurred while working with the file!!!: {str(error)}")
-                        
-                        if len(existing_data) != 0: # when there is a data in existing_data
-                            try:
-                                with open('today_news.json', 'w') as file:
-                                    existing_data.append(data)
-                                    json.dump(existing_data, file, indent=4)
-                                    file.close()
-                            except FileNotFoundError as error:
-                                print(f"An error occurred while working with the file!!!: {str(error)}")
+                    
+                    existing_data ="" # if this variable doesn't store data, don't write it in the json file
+                    
+                    if EMPTY_FILE == False: # if it is an empty file, json.load function will throw an exception error so check it
+                        try:
+                            with open('today_news.json', 'r') as file:
+                                existing_data = json.load(file)
+                                file.close()
+                        except FileNotFoundError as error:
+                            print(f"An error occurred while working with the file!!!: {str(error)}")
+                    else: # if writing the first news in the empty file
+                        try:
+                            with open('today_news.json', 'a') as file:
+                                jsonfile = [] # create a list and put python dictionary within the list. Otherwise, the dictionaries will not be within '[]'
+                                jsonfile.append(data)
+                                json.dump(jsonfile, file, indent=4)
+                                EMPTY_FILE = False
+                                file.close()
+                        except FileNotFoundError as error:
+                            print(f"An error occurred while working with the file!!!: {str(error)}")
+                    
+                    if len(existing_data) != 0: # when there is a data in existing_data
+                        try:
+                            with open('today_news.json', 'w') as file:
+                                existing_data.append(data)
+                                json.dump(existing_data, file, indent=4)
+                                file.close()
+                        except FileNotFoundError as error:
+                            print(f"An error occurred while working with the file!!!: {str(error)}")
                         
                 # set current url to be previous url after processing it
                 prev_url = h_url
