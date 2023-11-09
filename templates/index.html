@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        
-        <h1> CNN News Summary</h1>
-        <h4> Title goes here </h4>
-        <p> Summary goes here</p>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Mode</title>
+</head>
+<body>
+    <h1>Enter Mode</h1>
+    
+    <form method="post" action="/">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if result %}
+        <p>Result: {{ result }}</p>
+    {% endif %}
+</body>
 </html>
