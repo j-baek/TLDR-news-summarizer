@@ -2,24 +2,26 @@ import json
 import os
 import textSoup as news_function
 
-def add_newline_after_n_chars(input_string, n):
-    lines = input_string.split('\n')
+# adding new line after n chars. After n chars, if it is not white space, put new line when seeing a white space
+def add_newline_after_n_chars(string, n):
+    lines = string.split('\n') # split string into list of lines whenever encountering new line
     updated_lines = []
 
     for line in lines:
-        words = line.split()
+        words = line.split() # split current line into list of words
         current_line = ''
 
         for word in words:
-            if len(current_line) + len(word) <= n:
-                current_line += word + ' '
+            if len(current_line) + len(word) <= n: # checking if adding the current word would exceed n
+                current_line += word + ' ' # adding current word to current line
             else:
-                updated_lines.append(current_line.strip())
-                current_line = word + ' '
+                updated_lines.append(current_line.strip()) # append the current line to the list
+                current_line = word + ' ' # making a new current line
 
-        updated_lines.append(current_line.strip())
+        updated_lines.append(current_line.strip()) # appending the last line
 
-    return '\n'.join(updated_lines)
+    return '\n'.join(updated_lines) # join all the modified lines into a string with new line between the lines
+
 def news_pick(mode):
     #print("\n\n")
 
@@ -88,12 +90,4 @@ def news_pick(mode):
         print("Invalid Input!")
 
 
-'''
-news = news_pick(str(1))
-news_split = news.splitlines(True)
-news_total = ""
-
-for new in news_split:
-    news_total+= new + "\n"
-print(news_split)
-'''
+print(add_newline_after_n_chars(news_pick(str(1)), 100))
