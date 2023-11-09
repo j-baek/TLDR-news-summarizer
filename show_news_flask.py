@@ -2,6 +2,24 @@ import json
 import os
 import textSoup as news_function
 
+def add_newline_after_n_chars(input_string, n):
+    lines = input_string.split('\n')
+    updated_lines = []
+
+    for line in lines:
+        words = line.split()
+        current_line = ''
+
+        for word in words:
+            if len(current_line) + len(word) <= n:
+                current_line += word + ' '
+            else:
+                updated_lines.append(current_line.strip())
+                current_line = word + ' '
+
+        updated_lines.append(current_line.strip())
+
+    return '\n'.join(updated_lines)
 def news_pick(mode):
     #print("\n\n")
 
@@ -21,9 +39,14 @@ def news_pick(mode):
                 print("today_news.json file not FOUND!!!")
 
             num_id_len = len(today_data)
+            result1 =""
             for i in range(num_id_len):
-                result = ("Title : " + today_data[i]["title"] +  "\n" + "\n" + today_data[i]["summary"]+ "\n\n\n")
-                return result
+                result1 += ("Title : " + today_data[i]["title"] +  "\n" + "\n" + today_data[i]["summary"]+ "\n\n\n")
+            
+            news_string = result1.replace(".", ".\n")
+            news_split = add_newline_after_n_chars(news_string, 250)
+
+            return news_split
         # mode 2 indicates displaying the whole news
         if mode == str(2):
             # open json file to get the data that has news urls
@@ -41,24 +64,36 @@ def news_pick(mode):
 
             # display all news options with id and title
             # (i = num_id_len; i > -1; i--)
+            result2 =""
             for i in range(num_id_len -1, -1, -1) :
                     news_json = news_function.get_data(url_data[i]["url"])
-                    result =  ("\n " + str(i + 1) + "Title : " + news_json["title"] + "\n")
-                    return result
+                    result2 +=  ("\n " + str(i + 1) + " Title : " + news_json["title"] + "\n")
+            return result2
             userPick = input("Pick a news to see the summary. Please enter a number: ")
             print("\n")
             NEWS_FOUND = False
             # get the news that user chooses and display the tile and summary
+            result2=""
             for i in range(num_id_len) :
                 if url_data[i].get("id") == userPick:
                     news_json = news_function.get_data(url_data[i]["url"])
-                    result = ("Title: " + news_json["title"] + "\n" + "\n" + news_json["summary"]+ "\n")
-                    return result
+                    result2 += ("Title: " + news_json["title"] + "\n" + "\n" + news_json["summary"]+ "\n")
                     NEWS_FOUND = True
                     break;
+            return result2
             # for invalid input, print out message 
             if NEWS_FOUND is False :
                 print("Invalid input. \n")
     else:
         print("Invalid Input!")
 
+
+'''
+news = news_pick(str(1))
+news_split = news.splitlines(True)
+news_total = ""
+
+for new in news_split:
+    news_total+= new + "\n"
+print(news_split)
+'''
