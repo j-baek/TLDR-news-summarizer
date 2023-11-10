@@ -250,5 +250,29 @@
         "url": "https://edition.cnn.com/2023/11/06/tech/openai-chatgpt-sam-altman-updates/index.html",
         "title": "OpenAI unveils its most powerful AI model and customizable GPTs | CNN Business",
         "summary": "OpenAI has announced a series of updates to its viral AI chatbot ChatGPT at its developer conference, including the ability for developers to create custom versions of the tool. It is also launching a digital store where developers can list their custom versions of ChatGPT and earn money based on usage. OpenAI CEO Sam Altman also revealed GPT-4 Turbo, the latest version of the underlying technology, which can support input equal to 300 pages of a standard book and offers improvements in privacy and copyright protection."
+    },
+    {
+        "id": "43",
+        "url": "https://edition.cnn.com/2023/11/09/tech/trevor-project-quitting-x-safety-concerns/index.html",
+        "title": "A top LGBTQ+ advocacy org is quitting X over safety concerns | CNN Business",
+        "summary": "The Trevor Project, a suicide prevention organization for LGBTQ+ youth, has decided to leave social media platform X due to increasing hate and vitriol targeting the LGBTQ community. The organization cited concerns about insufficient moderation capabilities on the platform. This move comes after months of concerns about hateful speech and controversial policy changes on X, owned by Elon Musk, who has faced criticism for his statements regarding gender identity issues."
+    },
+    {
+        "id": "44",
+        "url": "https://edition.cnn.com/2023/11/09/tech/apple-cofounder-steve-wozniak-hospitalized-intl-hnk/index.html",
+        "title": "Steve Wozniak: Apple co-founder hospitalized in Mexico City, source says | CNN Business",
+        "summary": "Apple co-founder Steve Wozniak was hospitalized in Mexico City after fainting prior to his participation at the World Business Forum. Wozniak, known for his technical engineering skills, played a crucial role in designing the Apple I and Apple II computers that revolutionized the personal computing industry. Alongside Steve Jobs, he co-founded Apple in 1976, which has since become the world's most valuable company."
+    },
+    {
+        "id": "45",
+        "url": "https://edition.cnn.com/2023/11/09/tech/apple-eu-tax-bill-dispute/index.html",
+        "title": "Apple\u2019s fight against a $14 billion EU tax bill suffers a setback | CNN Business",
+        "summary": "The adviser to Europe's top court has suggested that a European tribunal made legal errors when ruling in favor of Apple over a \u20ac13 billion tax order, stating that the case should be reviewed again. The tax case against Apple dates back several years and was part of the European Union's crackdown on deals between multinationals and EU countries seen as unfair state aid. Although the European Court of Justice will make the final decision in the coming months, the court typically follows around four out of five of the adviser's recommendations."
+    },
+    {
+        "id": "46",
+        "url": "https://edition.cnn.com/2023/11/08/tech/meta-facebook-instagram-teen-safety/index.html",
+        "title": "Mark Zuckerberg ignored teen and user safety warnings from Meta executives | CNN Business",
+        "summary": "Newly unsealed internal communications in a lawsuit against Meta reveal that CEO Mark Zuckerberg repeatedly ignored or overruled his top executives' suggestions to improve user well-being on Facebook and Instagram, particularly for teen users. The communications show how Zuckerberg vetoed proposals to disable Instagram's \"beauty filters\" and rejected suggestions to invest more in well-being initiatives. The disclosures highlight Zuckerberg's influence over decision-making at Meta and raise concerns about the company's prioritization of user welfare."
     }
 ]
