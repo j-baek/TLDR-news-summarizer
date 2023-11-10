@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Mode</title>
+    <title> TLDR News Summary</title>
 </head>
 <body>
-    <h1>Enter Mode</h1>
-    
+    <h1>TLDR News</h1>
+    <h3>mode 1: Today's news <br />
+        mode 2: All news</h3>
+    <!-- create a html form that will be submitted to a server for processing.
+         the form data will be sent to the server using the HTTP POST method.
+         the form will be submitted to the root URL (indicated in 'action' attribute)-->
     <form method="post" action="/">
-        <label for="number">Enter a number:</label>
-        <input type="text" id="number" name="number" required>
+        <label for="mode">Choose a mode</label>
+        <select id="mode" name="mode">
+            <option ""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
         <button type="submit">Submit</button>
     </form>
 
     {% if result %}
         <pre  style="font-size: 15px;">{{ result }}</pre>
     {% endif %}
+
 </body>
 </html>

@@ -24,7 +24,7 @@ def add_newline_after_n_chars(string, n):
 
 def news_pick(mode):
     #print("\n\n")
-
+    print("news mode: " + mode)
     # user input taken as string, so convert 1 and 2 to strings
     if mode == str(1) or mode == str(2) :
         # mode 1 indicates showing today's news only
@@ -90,4 +90,4 @@ def news_pick(mode):
         print("Invalid Input!")
 
 
-print(add_newline_after_n_chars(news_pick(str(1)), 100))
+#print(add_newline_after_n_chars(news_pick(str(1)), 100))
