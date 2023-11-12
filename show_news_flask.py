@@ -1,26 +1,8 @@
 import json
 import os
 import textSoup as news_function
+import string_manipulation as s_manipulation
 
-# adding new line after n chars. After n chars, if it is not white space, put new line when seeing a white space
-def add_newline_after_n_chars(string, n):
-    lines = string.split('\n') # split string into list of lines whenever encountering new line
-    updated_lines = []
-
-    for line in lines:
-        words = line.split() # split current line into list of words
-        current_line = ''
-
-        for word in words:
-            if len(current_line) + len(word) <= n: # checking if adding the current word would exceed n
-                current_line += word + ' ' # adding current word to current line
-            else:
-                updated_lines.append(current_line.strip()) # append the current line to the list
-                current_line = word + ' ' # making a new current line
-
-        updated_lines.append(current_line.strip()) # appending the last line
-
-    return '\n'.join(updated_lines) # join all the modified lines into a string with new line between the lines
 
 def news_pick(mode):
     #print("\n\n")
@@ -41,12 +23,19 @@ def news_pick(mode):
                 print("today_news.json file not FOUND!!!")
 
             num_id_len = len(today_data)
-            result1 =""
-            for i in range(num_id_len):
-                result1 += ("Title : " + today_data[i]["title"] +  "\n" + "\n" + today_data[i]["summary"]+ "\n\n\n")
             
-            news_string = result1.replace(".", ".\n")
-            news_split = add_newline_after_n_chars(news_string, 250)
+            # separator separates news by news
+            separator = "____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________"
+            result1 = separator
+            # get all the news information and save them in result1 variable as a string
+            for i in range(num_id_len):
+                result1 += ("\nTitle : " + today_data[i]["title"] +  "\n\n" + today_data[i]["summary"]+ "\n\n" + "For more information, click the link : " + "\"" + today_data[i]["url"] + "\"" + "\n\n\n")
+                result1 = result1 + separator + "\n"
+            
+            # replace all the dots with a dot and a new line characteres if the dots are not in the double quotation marks, to avoid changing url 
+            news_string = s_manipulation.replace_dots(result1)
+            # add new lines to the strings so that on the webpage, it is easier to see the string all at once, not having to scroll to the right
+            news_split = s_manipulation.add_newline_after_n_chars(news_string, 250)
 
             return news_split
         # mode 2 indicates displaying the whole news
@@ -69,7 +58,7 @@ def news_pick(mode):
             result2 =""
             for i in range(num_id_len -1, -1, -1) :
                     news_json = news_function.get_data(url_data[i]["url"])
-                    result2 +=  ("\n " + str(i + 1) + " Title : " + news_json["title"] + "\n")
+                    result2 +=  ("\n " + str(i + 1) + " Title : " + news_json["title"] + "\n" + " For more information, click the link : " + "\"" + news_json["url"] + "\"" + "\n\n")
             return result2
             userPick = input("Pick a news to see the summary. Please enter a number: ")
             print("\n")
@@ -90,4 +79,3 @@ def news_pick(mode):
         print("Invalid Input!")
 
 
-#print(add_newline_after_n_chars(news_pick(str(1)), 100))
