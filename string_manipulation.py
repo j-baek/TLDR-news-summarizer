@@ -4,9 +4,10 @@ import re
 def replace_dots(string): 
     '''
     compile a regular expression pattern into a regular expression obejct.
-    In the re.compile function, the "r" indicates that the string should be treated as raw string, so backslash is used literally.
-    The backslash is used for dot to be treated as literal dot, and not as metacharacter in regular expression
-    '(?=(?:[^"]*"[^"]*")*[^"]*$)': a positive lookahead assertion, which checks that the dot is outside a pair of double quotation marks
+    In the re.compile function, the "r" prefix indicates that the backslash should be treated as a literal backslash,
+    and backslash itself indicates that the dot should be used as a literal dot, and not a metacharacter
+    Metacharacter is a character that has a special meaning and is not treated as a literal character
+    '(?=(?:[^"]*"[^"]*")*[^"]*$)': a positive lookahead assertion, which checks if the dot is outside a pair of double quotation marks
     '''
     pattern = re.compile(r'\.(?=(?:[^"]*"[^"]*")*[^"]*$)')
 
@@ -35,3 +36,12 @@ def add_newline_after_n_chars(string, n):
 
     return '\n'.join(updated_lines) # join all the modified lines into a string with new line between the lines
 
+# combine news and url together, with url having a hyperlink
+def news_info_and_url(news, url):
+    combined = ''
+    
+    # iterate both news and url at the same time using zip function,
+    # and put news element and url element together with url having a hyperlink
+    for news_e, url_e in zip(news,url):
+        combined += f'{news_e} <a href="{url_e}">{url_e}</a>' #f is for formatted string
+    return combined

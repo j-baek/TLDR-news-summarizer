@@ -23,7 +23,10 @@
     </form>
 
     {% if result %}
-        <pre  style="font-size: 15px;">{{ result }}</pre>
+    <!-- in Jinja2, by default, HTML escaping is applied to variables to prevent potential security 
+    vulnerabilities like Cross-Site Scripting (XSS). So HTML code within the variable is treated as plain text.
+    To prevent this, use 'safe' filter to render HTML content as actual HTML-->
+        <pre  style="font-size: 15px;">{{ result | safe }}</pre>
     {% endif %}
 
 </body>

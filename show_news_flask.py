@@ -27,17 +27,21 @@ def news_pick(mode):
             # separator separates news by news
             separator = "____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________"
             result1 = separator
+            news_list = []
+            url_list = []
             # get all the news information and save them in result1 variable as a string
             for i in range(num_id_len):
-                result1 += ("\nTitle : " + today_data[i]["title"] +  "\n\n" + today_data[i]["summary"]+ "\n\n" + "For more information, click the link : " + "\"" + today_data[i]["url"] + "\"" + "\n\n\n")
-                result1 = result1 + separator + "\n"
+                result1 += ("\nTitle : " + today_data[i]["title"] +  "\n\n" + today_data[i]["summary"]+ "\n\n" + "For more information, click the link : ")
+                news_list.append(result1)
+                url_list.append(today_data[i]["url"])
+    
+            for i in news_list:
+                i = s_manipulation.replace_dots(i)
+                i = s_manipulation.add_newline_after_n_chars(i, 250)
             
-            # replace all the dots with a dot and a new line characteres if the dots are not in the double quotation marks, to avoid changing url 
-            news_string = s_manipulation.replace_dots(result1)
-            # add new lines to the strings so that on the webpage, it is easier to see the string all at once, not having to scroll to the right
-            news_split = s_manipulation.add_newline_after_n_chars(news_string, 250)
+            news = s_manipulation.news_info_and_url(news_list, url_list)
 
-            return news_split
+            return news
         # mode 2 indicates displaying the whole news
         if mode == str(2):
             # open json file to get the data that has news urls
