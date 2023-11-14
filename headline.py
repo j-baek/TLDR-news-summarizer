@@ -5,6 +5,12 @@ from datetime import datetime
 import os
 import json
 
+# get the current directory of this file
+curr_dir = os.path.dirname(os.path.realpath(__file__)) # __file__ is a path to this current script
+
+# construct the path to the today_news.json file
+today_news_json = os.path.join(curr_dir, 'json_data', 'today_news.json')
+
 # get today's news and store them in today_news.json file
 def get_today_news(url):
     response = requests.get(url, timeout=10)
@@ -16,7 +22,7 @@ def get_today_news(url):
         prev_url = "https://edition.cnn.com" 
         TODAY_NEWS = False
         EMPTY_FILE = True
-        if os.path.exists('today_news.json'):
+        if os.path.exists(today_news_json):
             for headline_url in headline_urls:
                 # the url doesn't included https://edition.cnn.com so add them manually
                 h_url = "https://edition.cnn.com" + headline_url.get('href')
@@ -30,7 +36,7 @@ def get_today_news(url):
                         try:
                             # using 'w' mode wipes the whole data in the file to write new data
                             # so opening the file with 'w' and closing the file will just wipe the whole memory
-                            open('today_news.json', 'w').close() 
+                            open(today_news_json, 'w').close() 
                         except FileNotFoundError as error:
                             print(f"An error occurred while working with the file!!!: {str(error)}")
                         TODAY_NEWS = True
@@ -40,14 +46,14 @@ def get_today_news(url):
                     
                     if EMPTY_FILE == False: # if it is an empty file, json.load function will throw an exception error so check it
                         try:
-                            with open('today_news.json', 'r') as file:
+                            with open(today_news_json, 'r') as file:
                                 existing_data = json.load(file)
                                 file.close()
                         except FileNotFoundError as error:
                             print(f"An error occurred while working with the file!!!: {str(error)}")
                     else: # if writing the first news in the empty file
                         try:
-                            with open('today_news.json', 'a') as file:
+                            with open(today_news_json, 'a') as file:
                                 jsonfile = [] # create a list and put python dictionary within the list. Otherwise, the dictionaries will not be within '[]'
                                 jsonfile.append(data)
                                 json.dump(jsonfile, file, indent=4)
@@ -58,7 +64,7 @@ def get_today_news(url):
                     
                     if len(existing_data) != 0: # when there is a data in existing_data
                         try:
-                            with open('today_news.json', 'w') as file:
+                            with open(today_news_json, 'w') as file:
                                 existing_data.append(data)
                                 json.dump(existing_data, file, indent=4)
                                 file.close()
