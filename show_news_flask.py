@@ -29,7 +29,7 @@ def news_pick(mode):
             url_list = []
             # get all the news information and save them in result1 variable as a string
             for i in range(num_id_len):
-                result1 = ("\nTitle : " + today_data[i]["title"] +  "\n\n" + today_data[i]["summary"]+ "\n" + "For more information, click the link : ")
+                result1 = ("\nTitle : " + today_data[i]["title"] +  "\n\n" + today_data[i]["summary"]+ "\n\n" + "For more information, click the link : ")
                 news_list.append(result1)
                 url_list.append(today_data[i]["url"])
             
