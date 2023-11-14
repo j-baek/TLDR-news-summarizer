@@ -6,11 +6,13 @@ import os
 
 # get the current directory of this file
 curr_dir = os.path.dirname(os.path.realpath(__file__)) # __file__ is a path to this current script
+# move up one level to the whole directory
+whole_dir = os.path.dirname(curr_dir)
 
 # construct the path to the news_data.json
-news_data_json = os.path.join(curr_dir, 'json_data', 'news_data.json')
+news_data_json = os.path.join(whole_dir, 'json_data', 'news_data.json')
 # construct the path to the news_url.json
-news_url_json = os.path.join(curr_dir, 'json_data', 'news_url.json')
+news_url_json = os.path.join(whole_dir, 'json_data', 'news_url.json')
 
 # this funciton returns data from the url. If the data has already been processed, then return that data
 # from json file directly. If not, create json objects and store them on news_url.json and nes_data.json file then return the data
