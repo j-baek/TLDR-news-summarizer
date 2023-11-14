@@ -3,6 +3,14 @@ import os
 import textSoup as news_function
 import string_manipulation as s_manipulation
 
+# get the current directory of this file
+curr_dir = os.path.dirname(os.path.realpath(__file__)) # __file__ is a path to this current script
+
+# construct the path to the today_news.json file
+today_news_json = os.path.join(curr_dir, 'json_data', 'today_news.json')
+# construct the path to the news_url.json file
+news_url_json = os.path.join(curr_dir, 'json_data', 'news_url.json')
+
 
 def news_pick(mode):
     #print("\n\n")
@@ -12,9 +20,9 @@ def news_pick(mode):
         # mode 1 indicates showing today's news only
         if mode == str(1):
             # open today's news json file
-            if os.path.exists('today_news.json'):
+            if os.path.exists(today_news_json):
                 try:
-                    with open('today_news.json', 'r') as file:
+                    with open(today_news_json, 'r') as file:
                         today_data = json.load(file)
                         file.close()
                 except FileNotFoundError:
@@ -39,9 +47,9 @@ def news_pick(mode):
         # mode 2 indicates displaying the whole news
         if mode == str(2):
             # open json file to get the data that has news urls
-            if os.path.exists('news_url.json'):
+            if os.path.exists(news_url_json):
                 try:
-                    with open('news_url.json', 'r') as file:
+                    with open(news_url_json, 'r') as file:
                         url_data = json.load(file)
                         file.close()
                 except FileNotFoundError as error:
