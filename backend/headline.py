@@ -7,9 +7,11 @@ import json
 
 # get the current directory of this file
 curr_dir = os.path.dirname(os.path.realpath(__file__)) # __file__ is a path to this current script
+# move up one level to the whole directory
+whole_dir = os.path.dirname(curr_dir)
 
 # construct the path to the today_news.json file
-today_news_json = os.path.join(curr_dir, 'json_data', 'today_news.json')
+today_news_json = os.path.join(whole_dir, 'json_data', 'today_news.json')
 
 # get today's news and store them in today_news.json file
 def get_today_news(url):
