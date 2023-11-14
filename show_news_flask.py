@@ -51,28 +51,20 @@ def news_pick(mode):
 
             num_id_len = len(url_data)
 
+            result2 = ""
+            news_list = []
+            url_list = []
+
             # display all news options with id and title
             # (i = num_id_len; i > -1; i--)
-            result2 =""
             for i in range(num_id_len -1, -1, -1) :
                     news_json = news_function.get_data(url_data[i]["url"])
-                    result2 +=  ("\n " + str(i + 1) + " Title : " + news_json["title"] + "\n" + " For more information, click the link : " + "\"" + news_json["url"] + "\"" + "\n\n")
-            return result2
-            userPick = input("Pick a news to see the summary. Please enter a number: ")
-            print("\n")
-            NEWS_FOUND = False
-            # get the news that user chooses and display the tile and summary
-            result2=""
-            for i in range(num_id_len) :
-                if url_data[i].get("id") == userPick:
-                    news_json = news_function.get_data(url_data[i]["url"])
-                    result2 += ("Title: " + news_json["title"] + "\n" + "\n" + news_json["summary"]+ "\n")
-                    NEWS_FOUND = True
-                    break;
-            return result2
-            # for invalid input, print out message 
-            if NEWS_FOUND is False :
-                print("Invalid input. \n")
+                    result2 =  ("\n " + str(i + 1) + " Title : " + news_json["title"] + "\n" + " For more information, click the link : ")
+                    news_list.append(result2)
+                    url_list.append (news_json["url"])
+            
+            news = s_manipulation.news_info_and_url(news_list, url_list)
+            return news
     else:
         print("Invalid Input!")
 
