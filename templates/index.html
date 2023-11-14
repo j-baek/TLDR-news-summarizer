@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> TLDR News Summary</title>
+    <link rel="stylesheet" href="news.css">
+    <title>TLDR News </title>
 </head>
 <body>
     <h1>TLDR News</h1>
@@ -26,7 +27,11 @@
     <!-- in Jinja2, by default, HTML escaping is applied to variables to prevent potential security 
     vulnerabilities like Cross-Site Scripting (XSS). So HTML code within the variable is treated as plain text.
     To prevent this, use 'safe' filter to render HTML content as actual HTML-->
-        <pre  style="font-size: 15px;">{{ result | safe }}</pre>
+        <div class="text-box">
+            <p>
+                <pre  style="font-size: 15px; white-spacE: pre-wrap">{{ result | safe }}</pre>
+            </p>
+        </div>
     {% endif %}
 
 </body>

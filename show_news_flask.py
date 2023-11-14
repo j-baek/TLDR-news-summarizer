@@ -24,20 +24,14 @@ def news_pick(mode):
 
             num_id_len = len(today_data)
             
-            # separator separates news by news
-            separator = "____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________"
-            result1 = separator
+            result1 = ""
             news_list = []
             url_list = []
             # get all the news information and save them in result1 variable as a string
             for i in range(num_id_len):
-                result1 += ("\nTitle : " + today_data[i]["title"] +  "\n\n" + today_data[i]["summary"]+ "\n\n" + "For more information, click the link : ")
+                result1 = ("\nTitle : " + today_data[i]["title"] +  "\n\n" + today_data[i]["summary"]+ "\n" + "For more information, click the link : ")
                 news_list.append(result1)
                 url_list.append(today_data[i]["url"])
-    
-            for i in news_list:
-                i = s_manipulation.replace_dots(i)
-                i = s_manipulation.add_newline_after_n_chars(i, 250)
             
             news = s_manipulation.news_info_and_url(news_list, url_list)
 
