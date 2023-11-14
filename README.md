@@ -29,11 +29,8 @@ Then it uses OpenAI API to give scraped news to chatGPT to summarize the news in
 - [X] as date changes, the news headlines get updated so update the data accordingly
 - [X] show today's news headlines and show older news headlines as requested
 - [X] build webpage
-- [X] use Flask to connect python to html file so that summarized news data can be shown on web page
-- [ ] display whole news or link website if a user wants to see the whole news
-
-### more features
-- [ ] if a user clicks button, show its summary and link to the news website
+- [X] use Flask or Django to connect python to html file so that summarized news data can be shown on web page
+- [X] display whole news or link website if a user wants to see the whole news
 
 ## notes
 
