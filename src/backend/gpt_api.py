@@ -1,6 +1,7 @@
 import openai
 import creds
-openai.api_key = creds.api_key
+import os
+openai.api_key = os.getenv('OPENAI_API') 
 
 def summarize_data(article):
     completion = openai.ChatCompletion.create(
