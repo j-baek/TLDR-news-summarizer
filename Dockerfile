@@ -17,5 +17,7 @@ COPY . .
 # expose port 3000 (local host) for Flask to run
 EXPOSE 3000
 
+# change directory to src/backend
+WORKDIR /app/src/backend
 # Command to run the application
-CMD ["python3", "src/backend/main_flask.py"]
+CMD ["python3", "main_flask.py"]
