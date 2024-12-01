@@ -32,7 +32,19 @@ Then it uses OpenAI API to give scraped news to chatGPT to summarize the news in
 - [X] use Flask or Django to connect python to html file so that summarized news data can be shown on web page
 - [X] display whole news or link website if a user wants to see the whole news
 
-## notes
-
-
-### Architecture Diagram
+## Dockerization
+- Dockerfile
+  -  For requirements.txt, use either ```pip freeze``` or ```pipreqs``` (recommended)
+      - ```pip freeze``` saves all packages and dependencies in the environment including those that are not used in the current project
+      - ```pipreqs``` only puts those libraries in the requirements file which have been used in the project through imports. 
+  -  Difference between ```RUN CD``` and ```WORKDIR```
+      - ```RUN CD``` only changes directory for that command, and goes back to the default working directory
+      - ```WORKDIR``` changes directory and stays in that directory
+- .dockerignore
+  -  Since .dockerignore file only checks the current working directory, a wildcard needs to be used for the files that should not be included
+  -  '*/' is used for a file in any directory one level below the build context root.
+  -  For specifying a file in any directory, '**/' needs to be used
+- Building an image
+  -  ```docker build -t tldr-news-summarizer:latest .```
+- Running a docker with an api key
+  -  ```docker run -d -p 3000:3000 \ --env-file /path/to/your/env/file \ --name tldr-news-summarizer \ tldr-news-summarizer:latest```
