@@ -4,3 +4,4 @@ test.py
 output2.txt
 output3.txt
 creds.py
+.env
