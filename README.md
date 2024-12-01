@@ -46,5 +46,11 @@ Then it uses OpenAI API to give scraped news to chatGPT to summarize the news in
   -  For specifying a file in any directory, '**/' needs to be used
 - Building an image
   -  ```docker build -t tldr-news-summarizer:latest .```
+    - ```-t``` flag tags the image with a name
+    - ```tldr-news-summarizer```: name assigned to the immage
+    - ```latest```: tag for the image, indicating that it is a most recent version of an image
 - Running a docker with an api key
   -  ```docker run -d -p 3000:3000 \ --env-file /path/to/your/env/file \ --name tldr-news-summarizer \ tldr-news-summarizer:latest```
+    - ```d```: flag that runs the container in detached mode (container runs in the background and doesn't block the terminal
+    - ```--name tldr-news-summarizer```: container name
+    - ```tldr-news-summarizer:latest```: specifies the Docker image to use for the container
