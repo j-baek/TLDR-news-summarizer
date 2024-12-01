@@ -1,56 +1,69 @@
-# TLDR-news-summarizer
-***
-for people who are too lazy to read entire news but want to get some information
-<br />
-<br />
+# TLDR News Summarizer
+
+**For people who want the gist of the news without reading the entire article.**
+
+---
 
 ## Purpose
-<br />
-to give users news summarized in a few sentences.
+
+The TLDR News Summarizer aims to provide users with concise summaries of news articles in just a few sentences. This tool is perfect for those who prefer to get the key points of news quickly and effortlessly.
+
+---
 
 ## Inspiration
-<br />
-I always felt a bit lazy to read the whole news, and wanted shorter news just for important information.
-<br />
-Then, I thought I could write a program to interact with chatGPT to get summarization of news.
 
-## Simple explanation
-This program scrapes news from a certain website (tbd) using Python and Beautiful Soup.
-<br />
-Then it uses OpenAI API to give scraped news to chatGPT to summarize the news in a few sentences (number of sentences can be defined by the user)
-<br />
+The idea stemmed from a personal need for shorter, to-the-point news summaries. Instead of wading through lengthy articles, this program uses technology to generate bite-sized news summaries, saving time and effort.
 
-## Steps
-### Basics
-- [x] Use Beautiful Soup to extract source code from a webpage
-- [x] extract title and article body (use json functions to extract article body)
-- [x] use OPEN AI API to send the extracted data and ask it to summarize the data
-- [X] from news headline pages, get all head lines and their urls
-- [X] as date changes, the news headlines get updated so update the data accordingly
-- [X] show today's news headlines and show older news headlines as requested
-- [X] build webpage
-- [X] use Flask or Django to connect python to html file so that summarized news data can be shown on web page
-- [X] display whole news or link website if a user wants to see the whole news
+---
+
+## Overview
+
+This program scrapes news from a website (to be determined) using Python and Beautiful Soup. Then, it employs the OpenAI API to summarize the scraped news into a few user-defined sentences. 
+
+---
+
+## Features
+
+### Core Functionalities
+- Extracts the title and article body from a news webpage using Beautiful Soup and JSON functions.
+- Retrieves headlines and their URLs from news headline pages.
+- Updates headlines as the date changes to ensure fresh news content.
+- Provides access to older headlines upon user request.
+- Displays today’s news headlines and their summaries on a webpage.
+- Links to the full news article for further reading.
+
+### User Interaction
+- Uses Flask to connect Python logic to an HTML webpage, presenting the summarized news in an intuitive interface.
+- Allows customization of the summary length (number of sentences).
+
+### Additional Features
+- Easy access to full articles via embedded links.
+
+---
 
 ## Dockerization
-- Dockerfile
-  -  For requirements.txt, use either ```pip freeze``` or ```pipreqs``` (recommended)
-      - ```pip freeze``` saves all packages and dependencies in the environment including those that are not used in the current project
-      - ```pipreqs``` only puts those libraries in the requirements file which have been used in the project through imports. 
-  -  Difference between ```RUN CD``` and ```WORKDIR```
-      - ```RUN CD``` only changes directory for that command, and goes back to the default working directory
-      - ```WORKDIR``` changes directory and stays in that directory
-- .dockerignore
-  -  Since .dockerignore file only checks the current working directory, a wildcard needs to be used for the files that should not be included
-  -  '*/' is used for a file in any directory one level below the build context root.
-  -  For specifying a file in any directory, '**/' needs to be used
-- Building an image
+
+### Key Concepts
+
+1. **Requirements File**:
+   - Use `pipreqs` (recommended) to generate `requirements.txt`. It only includes libraries directly used in the project.
+   - Alternatively, use `pip freeze` (not recommended), which lists all packages in the environment, even unused ones.
+
+2. **Directory Management**:
+   - Use `WORKDIR` in the Dockerfile to set and maintain the working directory.
+   - Avoid `RUN cd` as it only changes the directory for a single command.
+
+3. **Docker Ignore**:
+   - Add irrelevant files and directories to `.dockerignore` to reduce the image size.
+   - Use `*/` for files in any directory one level below the root, and `**/` for files in any directory at any level.
+
+4. **Building Docker Image**:
   -  ```docker build -t tldr-news-summarizer:latest .```
-    - ```-t``` flag tags the image with a name
-    - ```tldr-news-summarizer```: name assigned to the immage
-    - ```latest```: tag for the image, indicating that it is a most recent version of an image
-- Running a docker with an api key
+      - ```-t``` flag tags the image with a name
+      - ```tldr-news-summarizer```: name assigned to the image
+      - ```latest```: tag for the image, indicating that it is a most recent version of an image
+5. **Running Docker Container**
   -  ```docker run -d -p 3000:3000 \ --env-file /path/to/your/env/file \ --name tldr-news-summarizer \ tldr-news-summarizer:latest```
-    - ```d```: flag that runs the container in detached mode (container runs in the background and doesn't block the terminal
-    - ```--name tldr-news-summarizer```: container name
-    - ```tldr-news-summarizer:latest```: specifies the Docker image to use for the container
+     - ```-d```: flag that runs the container in detached mode (container runs in the background and doesn't block the terminal
+     - ```--name tldr-news-summarizer```: container name
+     - ```tldr-news-summarizer:latest```: specifies the Docker image to use for the container
